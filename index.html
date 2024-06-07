@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RPS Game</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <p class="title">Rock Paper Scissors</p>
+
+    <button class="emoji" onclick="playGame('rock')">
+      <img class="emoji-icon" src="rock-emoji.png" />
+    </button>
+
+    <button class="emoji" onclick="playGame('paper')">
+      <img class="emoji-icon" src="paper-emoji.png" />
+    </button>
+
+    <button class="emoji" onclick="playGame('scissors')">
+      <img class="emoji-icon" src="scissors-emoji.png" />
+    </button>
+
+    <p class="js-result"></p>
+    <p class="js-move"></p>
+    <p class="js-score"></p>
+
+    <button
+      class="reset-btn"
+      onclick="
+      score.wins = 0;
+      score.losses = 0;
+      score.ties = 0;
+      localStorage.removeItem('score'); //Clear local storage
+      updateScoreElement();
+      "
+    >
+      Reset Score
+    </button>
+    <script src="app.js"></script>
+  </body>
+</html>
